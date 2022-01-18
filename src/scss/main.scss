@@ -1,0 +1,11 @@
+// Default variable overrides
+// primary라는 변수들이 전부 노란색으로 활용되도록 미리 정의함.
+$primary : #FDC000;
+
+// Required
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/root";
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
