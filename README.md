@@ -5,7 +5,7 @@
 
 0) Vue Router 구성 연결 & Bootstrap 구성 적용
 
-1) MainPage / Header - Nav & Site Logo 작업
+1) MainPage / Header - Nav & Site Logo 작업<br/>
    1-1) Navigation바 작업 - Search, Movie, About
       - Search : 영화 검색, 정렬방식
       - Movie  : 영화 상세정보 표시 페이지 (기본값으로 frozen 표시)
