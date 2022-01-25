@@ -13,7 +13,6 @@
         v-model="$data[filter.name]"
         :key="filter.name"
         class="form-select">
-        <!-- value 속성같은 경우 option의 실제 값을 제공할수있다. -->
         <option 
           v-if="filter.name ==='year'"
           value="">
@@ -37,7 +36,7 @@
 
 
 <script>
-import axios from 'axios'
+
 
 export default {
   data() {
@@ -72,10 +71,12 @@ export default {
   },
   methods: {
     async apply() {
-      // Movie Search..
-      const OMDB_API_KEY = '7035c60c'
-      const res = await axios.get(`https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${this.title}&type=${this.type}&y=${this.year}&page=1`)
-      console.log(res)
+      this.$store.dispatch('movie/searchMovies', {
+        title: this.title,
+        type: this.type,
+        number: this.number,
+        year: this.year
+      }) 
     }
   }
 }
@@ -84,7 +85,7 @@ export default {
 <style lang="scss" scoped>
 .container {
   display: flex;
-  > * {   // 컨테이너의 모든 자식요소들 사이여백적용
+  > * { 
     margin-right: 10px;
     font-size: 15px;
     // 마지막 요소 여백 제외
