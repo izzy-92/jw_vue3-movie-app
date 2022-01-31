@@ -1,6 +1,13 @@
 // Default variable overrides
 // primary라는 변수들이 전부 노란색으로 활용되도록 미리 정의함.
 $primary : #FDC000;
+$container-max-widths: (
+  sm: 540px,
+  md: 704px,
+  lg: 924px,
+  xl: 1140px,
+  xxl: 1364px
+);
 
 // Required
 @import "../../node_modules/bootstrap/scss/functions";
