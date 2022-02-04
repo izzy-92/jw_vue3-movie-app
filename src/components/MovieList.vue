@@ -3,7 +3,6 @@
     <div
       :class="{ 'no-result': !movies.length }"
       class="inner">
-      <!-- BootStrap 제공 로딩 애니메이션 추가 -->
       <div 
         v-if="loading"
         class="spinner-border text-primary"></div>
