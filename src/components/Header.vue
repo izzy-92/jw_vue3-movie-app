@@ -34,7 +34,7 @@ export default {
         },
                 {
           name: 'Movie',
-          href: '/movie'
+          href: '/movie/tt4520988' // frozen 영화상세정보 id값 지정
         },
                 {
           name: 'About',

@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import Home from './Home'
-import Movie from './Movie'
-import About from './About'
+import Home from '~/pages/Home'
+import Movie from '~/pages/Movie'
+import About from '~/pages/About'
 
 // 기본구성옵션
 export default createRouter({
@@ -14,7 +14,7 @@ export default createRouter({
       component: Home
     },
     {
-      path: '/movie',
+      path: '/movie/:dynamicID',
       component: Movie
     },
     {
