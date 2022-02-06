@@ -83,9 +83,10 @@ export default {
         loading: true
       })
       try {
-        const res = await _fetchMovie(payload)
+        const res = await _fetchMovie(payload) // 영화정보 잘 가지고 오면
+        console.log(res.data) // ratings 부분이 어떻게 구성되어있는지 알아보기위해 콘솔출력!
         commit('updateState', {
-          theMovie: res.data
+          theMovie: res.data  // 데이터 속성에서 가지고 온 영화정보 확인가능
         })
       } catch (error) {
         commit('updateState', {
@@ -100,7 +101,6 @@ export default {
   }
 }
 
-// 현재 파일 내부에서만 사용
 function _fetchMovie(payload) {
   const { title, type, year, page, id} = payload
   const OMDB_API_KEY = '7035c60c'
