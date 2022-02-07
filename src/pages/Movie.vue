@@ -24,7 +24,11 @@
       class="movie-details">
       <div
         :style="{ backgroundImage: `url(${requestDiffSizeImage(theMovie.Poster)})` }"
-        class="poster"></div>
+        class="poster">
+        <Loader 
+          v-if="imageLoading"
+          absolute />
+      </div>
       <div class="specs">
         <div class="title">
           {{ theMovie.Title }}
@@ -79,6 +83,11 @@ export default {
   components : {
     Loader
   },
+  data() {
+    return {
+      imageLoading: true
+    }
+  },
   computed: {
     theMovie() {
       return this.$store.state.movie.theMovie
@@ -94,10 +103,18 @@ export default {
     })
   },
   methods: {
-    // 고해상도의 포스터로 사이즈 변경을 위한 메소드 추가
     requestDiffSizeImage(url, size = 700) {
-      // 특정한 문자를 다른문자로 바꿔주어 이미지 전송요청 후 반환처리.
-      return url.replace('SX300', `SX${size}`)
+      // 영화 포스터가 없는 경우 예외처리
+      if (!url || url === 'N/A') {
+        this.imageLoading = false // 로딩애니메이션 종료
+        return '' // undefined 반환되지않도록 빈 문자열 반환처리.
+      }
+      const src = url.replace('SX300', `SX${size}`)
+      this.$loadImage(src)
+        .then(() => {
+          this.imageLoading = false
+        })
+        return src
     }
   }
 }
@@ -158,6 +175,7 @@ export default {
     background-color: $gray-200;
     background-size: cover;
     background-position: center;
+    position: relative;
   }
   .specs {
     flex-grow: 1;
@@ -172,11 +190,11 @@ export default {
       color: $primary;
       span { // 영화 출시년도, 상영시간, 국가
         &::after {
-          content: "\00b7"; // 가운데 점표시
+          content: "\00b7"; // 가운데 점표시 (특수문자)
           margin: 0 6px;
         }
         &:last-child::after {
-          display: none; // 마지막 요소의 가운데 점은 안보이게처리.
+          display: none;
 
         }
       }

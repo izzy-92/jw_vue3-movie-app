@@ -83,10 +83,9 @@ export default {
         loading: true
       })
       try {
-        const res = await _fetchMovie(payload) // 영화정보 잘 가지고 오면
-        console.log(res.data) // ratings 부분이 어떻게 구성되어있는지 알아보기위해 콘솔출력!
+        const res = await _fetchMovie(payload)
         commit('updateState', {
-          theMovie: res.data  // 데이터 속성에서 가지고 온 영화정보 확인가능
+          theMovie: res.data
         })
       } catch (error) {
         commit('updateState', {
