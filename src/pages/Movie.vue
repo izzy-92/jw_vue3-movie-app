@@ -224,6 +224,35 @@ export default {
       font-size: 20px;
     }
   }
+  // 뷰포트의 너비가 Extra-large 보다 작을경우
+  @include media-breakpoint-down(xl) {
+    .poster {
+      width: 300px;
+      height: 300px * 3 / 2;
+      margin-right: 40px;
+    }
+  }
+  @include media-breakpoint-down(lg) { // largh
+      display: block;
+      .poster {
+        margin-bottom: 40px;
+      }
+  }
+  @include media-breakpoint-down(md) { // medium
+    .specs {
+      .title { // 영화 제목
+        font-size: 50px;
+      }
+      .ratings { // 평점
+        .rating-wrap {
+          display: block; // 수평-> 수직으로 쌓이도록!
+          .rating {
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+  }
 }
 
 </style>
