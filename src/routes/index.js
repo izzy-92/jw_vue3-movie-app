@@ -8,6 +8,10 @@ import NotFound from '~/pages/NotFound'
 export default createRouter({
   // Hash모드(#)
   history: createWebHashHistory(),
+  // 페이지 이동 시 항상 스크롤은 상단위치
+  scrollBehavior() {
+    return { top: 0 }
+  },
   // pages
   routes: [
     {

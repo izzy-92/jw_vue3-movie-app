@@ -46,7 +46,13 @@ module.exports = {
           'style-loader',
           'css-loader',
           'postcss-loader',
-          'sass-loader'
+          // 객체 리터럴 추가!
+          {
+            loader: 'sass-loader',
+            options: {
+              additionalData: '@import "~/scss/main.scss";'
+            }
+          }
         ]
       },
       {

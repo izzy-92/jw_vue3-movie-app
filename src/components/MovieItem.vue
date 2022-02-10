@@ -56,7 +56,7 @@ export default {
 
 
 <style lang="scss" scoped>
-@import "~/scss/main";
+
 .movie {
   $width: 168px; // 특정 가로수치 지정
   width: $width;

@@ -78,6 +78,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import Loader from '~/components/Loader'
 export default {
   components : {
@@ -89,12 +90,11 @@ export default {
     }
   },
   computed: {
-    theMovie() {
-      return this.$store.state.movie.theMovie
-    },
-    loading() {
-      return this.$store.state.movie.loading
-    }
+    // Vuex helpers 적용
+    ...mapState('movie', [
+      'theMovie',
+      'loading'
+    ])
   },
   created() {
     console.log(this.$route)
@@ -106,8 +106,8 @@ export default {
     requestDiffSizeImage(url, size = 700) {
       // 영화 포스터가 없는 경우 예외처리
       if (!url || url === 'N/A') {
-        this.imageLoading = false // 로딩애니메이션 종료
-        return '' // undefined 반환되지않도록 빈 문자열 반환처리.
+        this.imageLoading = false
+        return ''
       }
       const src = url.replace('SX300', `SX${size}`)
       this.$loadImage(src)
@@ -121,7 +121,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~/scss/main";
 
 .container {
   padding-top: 40px;
@@ -245,7 +244,7 @@ export default {
       }
       .ratings { // 평점
         .rating-wrap {
-          display: block; // 수평-> 수직으로 쌓이도록!
+          display: block;
           .rating {
             margin-top: 10px;
           }
