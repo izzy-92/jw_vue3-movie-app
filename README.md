@@ -40,4 +40,5 @@
 
 7) Vuex Helpers 적용& 배포<br/>
    7-1) 검색 정보 초기화 및 페이지 전환 스크롤 위치 복구<br/>
-   7-2) Netlify 배포 (사이트)
+   7-2) Netlify 배포 (Site화)   
+       - 보안을 위해 API KEY가 노출되지않도록 Netlify에서 제공하는 Serverless Function 기능을 사용하여 수정하기.
