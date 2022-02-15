@@ -32,20 +32,19 @@
       5-1) Vuex 패키지 설치, 모듈 구성하기  
 
 6) 404 page 만들기  
-   - 사용자가 다른주소 입력 시 404 Page Not Found 에러 페이지 발생시키기.   
-<br/>
+   - 사용자가 다른주소 입력 시 404 Page Not Found 에러 페이지 발생시키기.<br/>
+
 7) 부트스트랩 제공 기능을 이용한 반응형 레이아웃 만들기<br/>
       7-1) Home 페이지의 Header 영역<br/>
-      - 뷰포트 너비가 줄어들었을때 Navigation 메뉴가 사라지도록 작업.<br/>
-      - 메인페이지의 우측 Logo 이미지를 클릭했을때 About 페이지로 이동.<br/>
+         - 뷰포트 너비가 줄어들었을때 Navigation 메뉴가 사라지도록 작업.<br/>
+         - 메인페이지의 우측 Logo 이미지를 클릭했을때 About 페이지로 이동.  
       7-2) Home 페이지의 Search 컴포넌트 영역 & Movie 페이지 반응형 작업.<br/>
 
 8) Vuex Helpers 적용 & 배포<br/>
-      8-1) 검색 정보 초기화 및 페이지 전환 스크롤 위치 복구  
-      8-2) Netlify 배포 (Site)  
-      - Netlify CLI 구성 & Serverless Function 생성  
-      : 보안을 위해 API KEY가 노출되지않도록 Netlify에서 제공하는  
-        Serverless Function 기능을 사용하여 숨김처리  
-      - 영화 정보 반환 API 만들기  
-      - 로컬 및 서버 환경 변수 구성 & 배포
+      8-1) 검색 정보 초기화 및 페이지 전환 스크롤 위치 복구<br/>
+      8-2) Netlify 배포 (Site)<br/>
+         - Netlify CLI 구성 & Serverless Function 생성<br/>
+         : 보안을 위해 API KEY가 노출되지않도록 Netlify에서 제공하는 Serverless Function 기능을 사용하여 숨김처리<br/>
+         - 영화 정보 반환 API 만들기<br/>
+         - 로컬 및 서버 환경 변수 구성 & 배포
 
