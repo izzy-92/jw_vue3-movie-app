@@ -66,8 +66,7 @@ export default {
           })
         }
         }
-        
-      } catch (message) {
+      } catch ({ message }) {
         commit('updateState', {
           movies: [], 
           message
@@ -104,24 +103,7 @@ export default {
   }
 }
 
-function _fetchMovie(payload) {
-  const { title, type, year, page, id} = payload
-  const OMDB_API_KEY = '7035c60c'
-  const url = id
-    ? `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&i=${id}` // 단일 영화 상세정보를 요청하는 API url
-    : `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${title}&type=${type}&y=${year}&page=${page}` // 여러개의 영화 정보 요청
-
-  return new Promise((resolve, reject) => {
-    axios.get(url)
-      .then(res => {
-        // 예외처리 
-        if (res.data.Error) {
-          reject(res.data.Error)
-        }
-        resolve(res)
-      })
-      .catch(err => {
-        reject(err.message)
-      })
-  })
+// netlify/functions/movie의 Serverless Function 실행 (비동기 처리)
+async function _fetchMovie(payload) {
+  return await axios.post('/.netlify/functions/movie', payload)
 }
