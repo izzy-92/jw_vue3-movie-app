@@ -29,22 +29,28 @@
       4-4) 영화 포스터가 없는 경우 로딩 애니메이션 종료 (예외처리) & Nav 경로 일치 및 활성화  
 
 5) Vuex(Store 생성)  
-      5-1) Vuex 패키지 설치, 모듈 구성하기  
+   - Vuex 패키지 설치, 모듈 구성하기<br/><br/>
 
 6) 404 page 만들기  
-   - 사용자가 다른주소 입력 시 404 Page Not Found 에러 페이지 발생시키기.<br/>
+   - 사용자가 다른주소 입력 시 404 Page Not Found 에러 페이지 발생시키기.<br/><br/>
 
 7) 부트스트랩 제공 기능을 이용한 반응형 레이아웃 만들기<br/>
-      7-1) Home 페이지의 Header 영역<br/>
-         - 뷰포트 너비가 줄어들었을때 Navigation 메뉴가 사라지도록 작업.<br/>
-         - 메인페이지의 우측 Logo 이미지를 클릭했을때 About 페이지로 이동.  
-      7-2) Home 페이지의 Search 컴포넌트 영역 & Movie 페이지 반응형 작업.<br/>
+      1) Home 페이지의 Header 영역<br/>
+      - 뷰포트 너비가 줄어들었을때 Navigation 메뉴가 사라지도록 작업.<br/>
+      - 메인페이지의 우측 Logo 이미지를 클릭했을때 About 페이지로 이동.<br/><br/>
+      2) Home 페이지의 Search 컴포넌트 영역 & Movie 페이지 반응형 작업.<br/><br/>
 
 8) Vuex Helpers 적용 & 배포<br/>
-      8-1) 검색 정보 초기화 및 페이지 전환 스크롤 위치 복구<br/>
-      8-2) Netlify 배포 (Site)<br/>
-         - Netlify CLI 구성 & Serverless Function 생성<br/>
-         : 보안을 위해 API KEY가 노출되지않도록 Netlify에서 제공하는 Serverless Function 기능을 사용하여 숨김처리<br/>
-         - 영화 정보 반환 API 만들기<br/>
-         - 로컬 및 서버 환경 변수 구성 & 배포
+      1) 검색 정보 초기화 및 페이지 전환 스크롤 위치 복구<br/>
+      2) Netlify 배포 (Site)<br/>
+      - Netlify CLI 구성 & Serverless Function 생성<br/>
+      : 보안을 위해 API KEY가 노출되지않도록 Netlify에서 제공하는 Serverless Function 기능을<br/>사용하여 숨김처리<br/>
+      - 영화 정보 반환 API 만들기<br/>
+      - 로컬 및 서버 환경 변수 구성 & 배포<br/><br/>
 
+9) 단위 테스트 & E2E 테스트 진행  
+      1) 테스트 환경 구성 & 첫 테스트 진행<br/>
+      - JEST 설치 후 비동기 테스트 진행, 모의(Mock)함수 활용 테스트 진행<br/>
+      - Vue Test Utils(VTU) 패키지 설치 후 컴포넌트 테스트 진행<br/><br/>
+      2) 각 컴포넌트 테스트 진행  
+      - Header,Search,Movie 컴포넌트와 movie Store 테스트 진행.
