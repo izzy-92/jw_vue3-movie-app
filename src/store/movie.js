@@ -1,7 +1,7 @@
 import axios from 'axios'
 import _uniqBy from 'lodash/uniqBy'
 
-const _defaultMsg = 'Search from the movie title!'
+const _defaultMsg = 'Search for the movie title!'
 
 export default {
   namespaced: true,
@@ -18,6 +18,7 @@ export default {
         state[key] = payload[key]
       })
     },
+    // 초기화
     resetMovies(state) {
       state.movies = []
       state.message = _defaultMsg
