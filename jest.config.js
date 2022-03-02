@@ -18,7 +18,9 @@ module.exports = {
   // // `<rootDir>` 토큰을 사용해 루트 경로를 참조할 수 있습니다.
   modulePathIgnorePatterns: [
     '<rootDir>/node_modules',
-    '<rootDir>/dist'
+    '<rootDir>/dist',
+    '<rootDir>/cypress'
+    // 단위 테스트에서 cypress 폴더 내 파일들을 사용하지않겠다고 지정해야 충돌 에러가 방지된다.
   ],
 
   // jsdom 환경에 대한 URL을 설정합니다.
